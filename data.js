@@ -4529,42 +4529,42 @@ const UNGK_DATA = [
     "id": "KU-0511",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "umola",
-    "teks_blok": "makoa mini solona umola banjir: ande akowao somoloa tantumo makoa mini solona umola, jIka semalam hujan, tentu banjir w"
+    "teks_blok": "makoa mini solona umola banjir: ande akowao samaloa tantumo makoa mini solona umola, jIka semalam hujan, tentu banjir w"
   },
   {
     "id": "KU-0512",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "waa",
-    "teks_blok": "weona waa bara yang menyala: pekamatea weona waa yitu, padamkan bara yang menyala itu; kapala waa kapal yang dijalankan dengan kekuatan asap: kapala waa humai padaaka abosemo, kapal yang dijalankan dengari kekuatan asap itu hendak berangkat; delana waa ujung nyala api: mangau limaka delapiaku delana waa, terbakar tanganku kena ujung nyala api; delapia waa menjadi hitam: rindina banua humai komompu delapia waa, dinding rumah itu seperti men jadi hitam; kapala waa kapal api: kapala waa simpompu kawaa, kapal api baru tiba; batu waa batu yang dipantik menghasilkan api: yaku kuene baiu waa ida/a, saya memungut batu yang dipantik menghasilkan api di jatan"
+    "teks_blok": "weona waa bara yang menyala: pekamatea weona waa yitu, padamkan bara yang menyala itu; kapala waa kapal yang dijalankan dengan kekuatan asap: kapala waa humai padaaka abosemo, kapal yang dijalankan dengari kekuatan asap itu hendak berangkat; delana waa ujung nyala api: mangau limaku delapiaku delana waa, terbakar tanganku kena ujung nyala api; delapia waa menjadi hitam: rindina banua humai komompu delapia waa, dinding rumah itu seperti men jadi hitam; kapala waa kapal api: kapala waa simpompu kawaa, kapal api baru tiba; batu waa batu yang dipantik menghasilkan api: yaku kuene batu waa idala, saya memungut batu yang dipantik menghasilkan api di jalan"
   },
   {
     "id": "KU-0513",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
-    "kata_kunci": "yadarnia",
-    "teks_blok": "aana yadarnia orang yang pernah dididiknya: aana yadarnia maogemo, orang yang pernah dididiknya sudah besar"
+    "kata_kunci": "yadarina",
+    "teks_blok": "aana yadarina orang yang pernah dididiknya: aana yadarina maogemo, orang yang pernah dididiknya sudah besar"
   },
   {
     "id": "KU-0514",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "yandala",
-    "teks_blok": "ngalu mina yándala angin dari laut ke darat: kadangianangalu rniayandala yita, terjadinya angin dari taut ke darat pada waktu slang"
+    "teks_blok": "ngalu mina yándala angin dari laut ke darat: kadangiana ngalu minaa yandala yita, terjadinya angin dari taut ke darat pada waktu siang"
   },
   {
     "id": "KU-0515",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "yapai",
-    "teks_blok": "yapai ba yapai lenci dl mana kepala di mana ekor: inda atomatau yapai ha yapai lenci, tidak tentu mana kepala mana ekor"
+    "teks_blok": "yapai ba yapai lenci di mana kepala di mana ekor: inda atomatau yapai ba yapai lenci, tidak tentu mana kepala mana ekor"
   },
   {
     "id": "KU-0516",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "yati",
-    "teks_blok": "ngalu mina yati angin dari darat ke taut: kadangiana ngalu minayati oeo, terjadinya angin dart darat ke taut pada waktu malam"
+    "teks_blok": "ngalu mina yati angin dari darat ke taut: kadangiana ngalu mina yati oeo, terjadinya angin dart darat ke taut pada waktu malam"
   },
   {
     "id": "KU-0517",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "yiakala",
-    "teks_blok": "yinda pesua yiakala tidak mungkin begitu: yindapesuayiakalayingkoyitu lulusu, ronamoyingko kabongo-bongo, tidak mungkin engkau lulus karena engkau bodoh ?"
+    "teks_blok": "yinda pesua yiakala tidak mungkin begitu: yindapesua yiakala yingkoyitu lulusu, ronamo yingko kabongo-bongo, tidak mungkin engkau lulus karena engkau bodoh?"
   }
 ];
