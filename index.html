@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korpus Bahasa Wolio</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --border: #e4e2dc;
+    --text: #1a1917;
+    --text-2: #6b6760;
+    --text-3: #9c9990;
+    --accent: #2563c8;
+    --accent-bg: #eff4fd;
+    --accent-border: #bdd0f5;
+    --wolio: #1a5c3a;
+    --wolio-bg: #eef7f2;
+    --radius: 10px;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .site-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    flex-shrink: 0;
+  }
+  .site-title span { color: var(--wolio); }
+  .search-wrap { flex: 1; min-width: 200px; position: relative; }
+  .search-wrap input {
+    width: 100%;
+    padding: .6rem 1rem .6rem 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color .15s;
+  }
+  .search-wrap input:focus { border-color: var(--accent); }
+  .search-wrap .icon {
+    position: absolute;
+    left: .75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-3);
+    font-size: 15px;
+  }
+
+  /* MAIN LAYOUT */
+  .main { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+
+  /* STATS BAR */
+  .stats-bar {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .stat { font-size: 13px; color: var(--text-2); }
+  .stat strong { color: var(--text); font-weight: 600; }
+
+  /* MODE TABS */
+  .mode-tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+  .mode-tab {
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .mode-tab:hover { border-color: var(--accent); color: var(--accent); }
+  .mode-tab.active {
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* DOMAIN FILTERS */
+  .domain-filters { display: flex; gap: 5px; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .domain-btn {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .domain-btn:hover { border-color: var(--border); color: var(--text); }
+  .domain-btn.active {
+    background: var(--wolio-bg);
+    border-color: #8ecbac;
+    color: var(--wolio);
+    font-weight: 500;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin: 1.25rem 0 .6rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* KOSAKATA CARD */
+  .kosa-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: .9rem 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+    transition: border-color .15s;
+  }
+  .kosa-card:hover { border-color: var(--accent-border); }
+  .kosa-wolio { font-size: 18px; font-weight: 600; color: var(--wolio); margin-bottom: 2px; }
+  .kosa-trans { font-size: 13px; color: var(--text-2); }
+  .domain-tag {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: var(--wolio-bg);
+    color: var(--wolio);
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* UNGKAPAN CARD */
+  .ung-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: .9rem 1.1rem;
+    margin-bottom: 6px;
+    transition: border-color .15s;
+  }
+  .ung-card:hover { border-color: var(--accent-border); }
+  .ung-key {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .ung-source {
+    font-size: 11px;
+    color: var(--text-3);
+    margin-bottom: 5px;
+  }
+  .ung-text { font-size: 13px; color: var(--text); line-height: 1.7; }
+
+  /* KWIC */
+  .kwic-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: .75rem 1rem;
+    margin-bottom: 6px;
+    font-size: 13px;
+    line-height: 1.8;
+    font-family: 'Menlo', 'Consolas', monospace;
+  }
+  .kwic-left { color: var(--text-2); }
+  .kwic-hit {
+    color: var(--accent);
+    font-weight: 700;
+    background: var(--accent-bg);
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+  .kwic-right { color: var(--text-2); }
+  .kwic-source { font-size: 11px; color: var(--text-3); font-family: sans-serif; margin-top: 4px; }
+
+  /* HIGHLIGHT */
+  mark { background: #fff3a3; color: inherit; border-radius: 2px; padding: 0 1px; }
+
+  /* EMPTY */
+  .empty {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--text-3);
+  }
+  .empty p { font-size: 14px; margin-top: .5rem; }
+
+  /* WELCOME */
+  .welcome {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-2);
+  }
+  .welcome h2 { font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: .5rem; }
+  .welcome p { font-size: 14px; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+  .welcome .counts {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .count-item { text-align: center; }
+  .count-item .num { font-size: 28px; font-weight: 700; color: var(--wolio); }
+  .count-item .lbl { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+
+  /* FOOTER */
+  footer {
+    max-width: 900px;
+    margin: 3rem auto 2rem;
+    padding: 1rem 1.5rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-3);
+    line-height: 1.8;
+  }
+  footer strong { color: var(--text-2); }
+
+  @media (max-width: 600px) {
+    .header-inner { gap: .75rem; }
+    .site-title { font-size: 15px; }
+    .kosa-wolio { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-title">Korpus <span>Bahasa Wolio</span></div>
+    <div class="search-wrap">
+      <span class="icon">🔍</span>
+      <input type="text" id="q" placeholder="Cari dalam Wolio, Indonesia, atau Inggris…" autocomplete="off" oninput="render()">
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="stats-bar" id="stats-bar">
+    <span class="stat"><strong>209</strong> kosakata trilingual</span>
+    <span class="stat"><strong>517</strong> ungkapan idiomatik</span>
+    <span class="stat">Bahasa Wolio · Baubau, Sulawesi Tenggara</span>
+  </div>
+
+  <div class="mode-tabs">
+    <button class="mode-tab active" onclick="setMode('semua',this)">Semua</button>
+    <button class="mode-tab" onclick="setMode('kosakata',this)">Kosakata</button>
+    <button class="mode-tab" onclick="setMode('ungkapan',this)">Ungkapan</button>
+    <button class="mode-tab" onclick="setMode('kwic',this)">KWIC</button>
+  </div>
+
+  <div class="domain-filters" id="domain-filters"></div>
+
+  <div id="results"></div>
+</main>
+
+<footer>
+  <strong>Sumber data:</strong><br>
+  · Nurhayati, Hartinawanti, Haswan. <em>Kamus Kosakata Wolio–Inggris–Indonesia</em>. Phoenix Publisher, 2023.<br>
+  · Aburaerah Arief dkk. <em>Kamus Ungkapan Wolio–Indonesia</em>. Depdikbud, 1992.<br>
+  · La Niampe. <em>Kamus Wolio–Indonesia</em>. Pusat Pembinaan dan Pengembangan Bahasa, 1985.<br>
+  <br>
+  Korpus ini dikembangkan untuk keperluan dokumentasi dan pelestarian Bahasa Wolio.
+</footer>
+
+<script src="data.js"></script>
+<script>
+let mode = 'semua';
+let activeDomain = '';
+
+// Build domain filter buttons
+const domains = ['Semua', ...new Set(KOSA_DATA.map(k => k.domain))];
+const df = document.getElementById('domain-filters');
+domains.forEach(d => {
+  const b = document.createElement('button');
+  b.className = 'domain-btn' + (d === 'Semua' ? ' active' : '');
+  b.textContent = d;
+  b.onclick = () => {
+    activeDomain = d === 'Semua' ? '' : d;
+    document.querySelectorAll('.domain-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    render();
+  };
+  df.appendChild(b);
+});
+
+function setMode(m, el) {
+  mode = m;
+  document.querySelectorAll('.mode-tab').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  df.style.display = (m === 'kosakata' || m === 'semua') ? 'flex' : 'none';
+  render();
+}
+
+function hl(text, q) {
+  if (!q) return text;
+  const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+function kwicLine(text, q, source) {
+  const lo = text.toLowerCase();
+  const qi = lo.indexOf(q.toLowerCase());
+  if (qi < 0) return null;
+  const W = 80;
+  const left = text.slice(Math.max(0, qi - W), qi);
+  const hit = text.slice(qi, qi + q.length);
+  const right = text.slice(qi + q.length, qi + q.length + W);
+  return `<div class="kwic-card">
+    <span class="kwic-left">…${left}</span><span class="kwic-hit">${hit}</span><span class="kwic-right">${right}…</span>
+    <div class="kwic-source">${source}</div>
+  </div>`;
+}
+
+function render() {
+  const q = document.getElementById('q').value.trim();
+  const ql = q.toLowerCase();
+  const res = document.getElementById('results');
+  const sb = document.getElementById('stats-bar');
+
+  if (!q) {
+    sb.innerHTML = `<span class="stat"><strong>209</strong> kosakata trilingual</span>
+      <span class="stat"><strong>517</strong> ungkapan idiomatik</span>
+      <span class="stat">Bahasa Wolio · Baubau, Sulawesi Tenggara</span>`;
+    res.innerHTML = `<div class="welcome">
+      <h2>Korpus Bahasa Wolio</h2>
+      <p>Sistem pencarian terpadu untuk kosakata dan ungkapan idiomatik Bahasa Wolio. Ketik kata dalam Wolio, Indonesia, atau Inggris untuk mulai.</p>
+      <div class="counts">
+        <div class="count-item"><div class="num">209</div><div class="lbl">Kosakata trilingual</div></div>
+        <div class="count-item"><div class="num">517</div><div class="lbl">Ungkapan idiomatik</div></div>
+        <div class="count-item"><div class="num">12</div><div class="lbl">Domain tematik</div></div>
+      </div>
+      <p>Gunakan mode <strong>KWIC</strong> untuk melihat kata dalam konteks kalimat.</p>
+    </div>`;
+    return;
+  }
+
+  let kosaHits = [], ungkHits = [];
+
+  if (mode === 'semua' || mode === 'kosakata') {
+    kosaHits = KOSA_DATA.filter(e => {
+      const domOk = !activeDomain || e.domain === activeDomain;
+      const textOk = e.wolio.toLowerCase().includes(ql) ||
+        e.indonesia.toLowerCase().includes(ql) ||
+        e.inggris.toLowerCase().includes(ql);
+      return domOk && textOk;
+    });
+  }
+
+  if (mode === 'semua' || mode === 'ungkapan' || mode === 'kwic') {
+    ungkHits = UNGK_DATA.filter(e =>
+      e.kata_kunci.toLowerCase().includes(ql) ||
+      e.teks_blok.toLowerCase().includes(ql)
+    );
+  }
+
+  const total = kosaHits.length + ungkHits.length;
+  sb.innerHTML = `<span class="stat"><strong>${total}</strong> hasil untuk "<em>${q}</em>"</span>
+    ${activeDomain ? `<span class="stat">· ${activeDomain}</span>` : ''}`;
+
+  let html = '';
+
+  if (mode === 'kwic') {
+    if (!ungkHits.length) {
+      html = '<div class="empty"><div style="font-size:2rem">🔍</div><p>Tidak ada konteks ditemukan untuk kata ini.</p></div>';
+    } else {
+      html = `<div class="section-label">Keyword in context — ${ungkHits.length} konteks</div>`;
+      ungkHits.forEach(e => {
+        const line = kwicLine(e.teks_blok, q, `[${e.id}] kata kunci: ${e.kata_kunci} — ${e.sumber}`);
+        if (line) html += line;
+      });
+    }
+  } else {
+    if (kosaHits.length) {
+      html += `<div class="section-label">Kosakata · ${kosaHits.length} entri</div>`;
+      kosaHits.forEach(e => {
+        html += `<div class="kosa-card">
+          <div>
+            <div class="kosa-wolio">${hl(e.wolio, q)}</div>
+            <div class="kosa-trans">${hl(e.indonesia, q)} &nbsp;·&nbsp; ${hl(e.inggris, q)}</div>
+          </div>
+          <span class="domain-tag">${e.domain}</span>
+        </div>`;
+      });
+    }
+    if (ungkHits.length) {
+      html += `<div class="section-label">Ungkapan idiomatik · ${ungkHits.length} entri</div>`;
+      ungkHits.forEach(e => {
+        html += `<div class="ung-card">
+          <div class="ung-key">${hl(e.kata_kunci, q)}</div>
+          <div class="ung-source">${e.sumber}</div>
+          <div class="ung-text">${hl(e.teks_blok, q)}</div>
+        </div>`;
+      });
+    }
+    if (!total) {
+      html = '<div class="empty"><div style="font-size:2rem">🔍</div><p>Tidak ada hasil untuk kata ini.<br>Coba variasi ejaan atau kata lain.</p></div>';
+    }
+  }
+
+  res.innerHTML = html;
+}
+
+render();
+</script>
+</body>
+</html>
