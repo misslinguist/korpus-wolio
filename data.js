@@ -3353,19 +3353,19 @@ const UNGK_DATA = [
     "id": "KU-0315",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "kokote",
-    "teks_blok": "mokokote-kotena berp idato: yincema mokikote-kotena yikarebosi humai, siapa yang berpidato di karebosi itu"
+    "teks_blok": "mokokote-kotena, berpidato: yincema mokikote-kotena yikarebosi humai, siapa yang berpidato di karebosi itu"
   },
   {
     "id": "KU-0316",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
-    "kata_kunci": "kikidisina",
-    "teks_blok": "bawana mina kokidisina sifatnya sejak kecil: kasegana humai bawana mina kokidisina, sifat keberaniannya itu sejak kecil"
+    "kata_kunci": "kakidisina",
+    "teks_blok": "bawana mina kakidisina, sifatnya sejak kecil: kasegana humai bawana mina kokidisina, sifat keberaniannya itu sejak kecil"
   },
   {
     "id": "KU-0317",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "kole",
-    "teks_blok": "kole-kole manu belum tidur benar: miii humai kole-kole manu, orang itu betum tidur benar"
+    "teks_blok": "kole-kole manu, belum tidur benar: miii humai kole-kole manu, orang itu betum tidur benar"
   },
   {
     "id": "KU-0318",
@@ -3389,13 +3389,13 @@ const UNGK_DATA = [
     "id": "KU-0321",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "komidi",
-    "teks_blok": "pande komidi pemain sandiwara: pande komidi temai dangua latiha, pemain sandiwara itu sementara latihan"
+    "teks_blok": "pande komidi, pemain sandiwara: pande komidi temai dangua latiha, pemain sandiwara itu sementara latihan"
   },
   {
     "id": "KU-0322",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "komingku",
-    "teks_blok": "masingka komingku cekatan: ande tamboore yibanuana miii tabeana masingka komingku, jika tinggal di rumah orang, haruslah cekatan"
+    "teks_blok": "masingka komingku, cekatan: ande tamboore yibanuana miii tabeana masingka komingku, jika tinggal di rumah orang, haruslah cekatan"
   },
   {
     "id": "KU-0323",
@@ -3425,19 +3425,19 @@ const UNGK_DATA = [
     "id": "KU-0327",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "konitiki",
-    "teks_blok": "konitiki butolompu Ia amat kikir: kiniriki butolompu mia humai, sampe marikaya, ia amat kikir sehingga dibenci konow ia pakea maIo-mao konowia pakalan sehari-hari: pakea bauna v/ru boli pakea malo-malo konowia, pakaian barumu itu jangan dijadikan pakaian se ha ri-h an"
+    "teks_blok": "konitiki butolompu, Ia amat kikir: kiniriki butolompu mia humai, sampe marikaya, ia amat kikir sehingga dibenci konow ia pakea maIo-mao konowia pakalan sehari-hari: pakea bauna v/ru boli pakea malo-malo konowia, pakaian barumu itu jangan dijadikan pakaian se ha ri-h an"
   },
   {
     "id": "KU-0328",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "koo",
-    "teks_blok": "koo maoge hutan besar: koo maoge marasai topesuakia ronarno puuna kouna pokawa-kawamo, hutan besar sukar dimasuki karena pohon-pohonnya berdem pet-dem pet; yitanga-tangana koo di padang yang amat luas: yitanga-tangana koo yitu bori kadodimasegu, di padang yang amat luas itu banyak binatang liar; manu koo ayam hutan: manu kooyitu maila, ayam hutan iru liar"
+    "teks_blok": "koo maoge, hutan besar: koo maoge marasai topesuakia ronarno puuna kouna pokawa-kawamo, hutan besar sukar dimasuki karena pohon-pohonnya berdem pet-dem pet; yitanga-tangana koo di padang yang amat luas: yitanga-tangana koo yitu bori kadodimasegu, di padang yang amat luas itu banyak binatang liar; manu koo ayam hutan: manu kooyitu maila, ayam hutan iru liar"
   },
   {
     "id": "KU-0329",
     "sumber": "Kamus Ungkapan Wolio-Indonesia, Depdikbud 1992",
     "kata_kunci": "koombu",
-    "teks_blok": "yinda kombu tidak merokok; vinda koombu mini mia humai, orang itu tidak merokok"
+    "teks_blok": "yinda koombu; tidak merokok; yinda koombu mini mia humai, orang itu tidak merokok"
   },
   {
     "id": "KU-0330",
